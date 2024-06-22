@@ -1,0 +1,126 @@
+  /* Hi there, this is a place for all css used in the vault. 
+  Please take whatever you want and enjoy your stay here at tristanhenderson.info.
+                                                                        -Tristan */
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid rgb(255, 255, 255);
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: rgb(255, 174, 0);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .container {
+    overflow: hidden;
+  }
+  
+  .filterDiv {
+    float: left;
+    color: (80, 59, 0);
+    line-height: 15px;
+    text-align: left;
+    margin: 0px;
+    display: none; /* Hidden by default */
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 0px 3px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  /* Add a light grey background on mouse-over */
+  .btn:hover {
+    background-color: rgb(253, 189, 106);
+    color: white;
+  }
+  
+  /* Add a dark background to the active button */
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+  
+
+
+    /* Circle typer */
+  body {
+    margin: 0;
+  }
+  
+  .holder {
+    height: 100%;
+    width: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .text {
+    font-family: "Vulf Mono", monospace;
+    font-weight: 800;
+    font-size: 40px;
+    color: #FEA648;
+  }
+  
+  span {
+    margin-bottom: 10px;
+    animation: 0.8s blink step-end infinite;
+  }
+  
+  @keyframes blink {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color:rgba(254, 166, 72, 0.185);
+    }
+  }
+

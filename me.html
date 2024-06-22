@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<head>
+  
+  <title>Heyo! I'm Tristan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="icon" href="./cow.png">
+<link rel="shortcut" href="./cow.png">
+<html lang="en">
+<meta charset="UTF-8">
+
+<meta http-equiv="refresh" content="25">
+
+<aside class="profile-card">
+    <header>
+      <!-- here’s the avatar -->
+      <a target="_blank" href="">
+        <img src="./Portrait 2022 copy.png" class="hoverZoomLink">
+      </a>
+  
+      <!-- the username -->
+      <h1>
+             Tristan Henderson
+            </h1>
+  
+      <!-- and role or location -->
+      <h2>
+        <a target="_blank" href="https://amoeba.msstate.edu"> PhD Student </a>
+            </h2>
+  
+    </header>
+  
+    <!-- bit of a bio; who are you? -->
+    <div class="profile-bio">
+  
+      <p>
+        Hi, I'm Tristan.<br>
+        I currently study the evolution of aggregative multicellularity using <a target="_blank" href="https://www.craft.do/s/QrACAKOu7P3jMT"><i>Copromyxa protea</i></a> as a model organism.
+        <br>
+      <b>tch318@msstate.edu</b>
+      </p>
+  
+    </div>
+
+    
+    <!-- some social links to show off -->
+    <div class="footer-social-icons">
+        <ul class="social-icons">
+            <li><a href="https://twitter.com/tristamoeba" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+        </ul>
+    </div>
+  </aside>
+
+<style>
+    html {
+        height: 100%;
+      }
+      
+      body {
+        overflow: hidden;
+        background: #bcdee7 url("../img/bg.jpg") no-repeat center center fixed;
+        background-size: cover;
+        position: fixed;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        font: normal 14px/1.618em "Roboto", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      body:before {
+        content: "";
+        height: 0px;
+        padding: 0px;
+        border: 130em solid #1a3d5e;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        z-index: 2;
+        display: block;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+        animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+      }
+      
+      h1,
+      h2 {
+        font-weight: 500;
+        margin: 0px 0px 5px 0px;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      h2 {
+        font-size: 16px;
+      }
+      
+      p {
+        margin: 0px;
+      }
+      
+      .profile-card {
+        background: #915a2c;
+        width: 56px;
+        height: 56px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 2;
+        overflow: hidden;
+        opacity: 0;
+        margin-top: 70px;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+        -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+        animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+      }
+      
+      .profile-card header {
+        width: 179px;
+        height: 280px;
+        padding: 40px 20px 30px 20px;
+        display: inline-block;
+        float: left;
+        border-right: 2px dashed #EEEEEE;
+        background: #FFFFFF;
+        color: #000000;
+        margin-top: 50px;
+        opacity: 0;
+        text-align: center;
+        -webkit-animation: moveIn 1s 3.1s ease forwards;
+        animation: moveIn 1s 3.1s ease forwards;
+      }
+      
+      .profile-card header h1 {
+        color: #FF5722;
+      }
+      
+      .profile-card header a {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        margin: 25px 30px;
+      }
+      
+      .profile-card header a:after {
+        position: absolute;
+        content: "";
+        bottom: 3px;
+        right: 3px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #ffffff;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        background: -webkit-linear-gradient(top, linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet));
+        background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet
+        );
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        -webkit-animation: scaleIn 0.3s 3.5s ease forwards;
+        animation: scaleIn 0.3s 3.5s ease forwards;
+      }
+      
+      .profile-card header a > img {
+        width: 120px;
+        max-width: 100%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-transition: -webkit-box-shadow 0.3s ease;
+        transition: box-shadow 0.3s ease;
+        -webkit-box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
+        box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
+      }
+      
+      .profile-card header a:hover > img {
+        -webkit-box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
+      }
+      
+      .profile-card .profile-bio {
+        width: 175px;
+        height: 180px;
+        display: inline-block;
+        float: right;
+        padding: 50px 20px 30px 20px;
+        background: #FFFFFF;
+        color: #333333;
+        margin-top: 50px;
+        text-align: center;
+        opacity: 0;
+        -webkit-animation: moveIn 1s 3.1s ease forwards;
+        animation: moveIn 1s 3.1s ease forwards;
+      }
+      
+      .profile-social-links {
+        width: 218px;
+        display: inline-block;
+        float: right;
+        margin: 0px;
+        padding: 15px 20px;
+        background: #FFFFFF;
+        margin-top: 50px;
+        text-align: center;
+        opacity: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-animation: moveIn 1s 3.1s ease forwards;
+        animation: moveIn 1s 3.1s ease forwards;
+      }
+      
+      .profile-social-links li {
+        list-style: none;
+        margin: -5px 0px 0px 0px;
+        padding: 0px;
+        float: left;
+        width: 25%;
+        text-align: center;
+      }
+      
+      .profile-social-links li a {
+        display: inline-block;
+        color: red;
+        width: 24px;
+        height: 24px;
+        padding: 6px;
+        position: relative;
+        overflow: hidden!important;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+      }
+      
+      .profile-social-links li a i {
+        position: relative;
+        z-index: 1;
+      }
+      
+      .profile-social-links li a img,
+      .profile-social-links li a svg {
+        width: 24px;
+      }
+      
+      @-webkit-keyframes init {
+        0% {
+          width: 0px;
+          height: 0px;
+        }
+        100% {
+          width: 56px;
+          height: 56px;
+          margin-top: 0px;
+          opacity: 1;
+        }
+      }
+      
+      @keyframes init {
+        0% {
+          width: 0px;
+          height: 0px;
+        }
+        100% {
+          width: 56px;
+          height: 56px;
+          margin-top: 0px;
+          opacity: 1;
+        }
+      }
+      
+      @-webkit-keyframes puff {
+        0% {
+          top: 100%;
+          height: 0px;
+          padding: 0px;
+        }
+        100% {
+          top: 50%;
+          height: 100%;
+          padding: 0px 100%;
+        }
+      }
+      
+      @keyframes puff {
+        0% {
+          top: 100%;
+          height: 0px;
+          padding: 0px;
+        }
+        100% {
+          top: 50%;
+          height: 100%;
+          padding: 0px 100%;
+        }
+      }
+      
+      @-webkit-keyframes borderRadius {
+        0% {
+          -webkit-border-radius: 50%;
+        }
+        100% {
+          -webkit-border-radius: 0px;
+        }
+      }
+      
+      @keyframes borderRadius {
+        0% {
+          -webkit-border-radius: 50%;
+        }
+        100% {
+          border-radius: 0px;
+        }
+      }
+      
+      @-webkit-keyframes moveDown {
+        0% {
+          top: 50%;
+        }
+        50% {
+          top: 40%;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+      
+      @keyframes moveDown {
+        0% {
+          top: 50%;
+        }
+        50% {
+          top: 40%;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+      
+      @-webkit-keyframes moveUp {
+        0% {
+          background: #FFB300;
+          top: 100%;
+        }
+        50% {
+          top: 40%;
+        }
+        100% {
+          top: 50%;
+          background: #E0E0E0;
+        }
+      }
+      
+      @keyframes moveUp {
+        0% {
+          background: #FFB300;
+          top: 100%;
+        }
+        50% {
+          top: 40%;
+        }
+        100% {
+          top: 50%;
+          background: #E0E0E0;
+        }
+      }
+      
+      @-webkit-keyframes materia {
+        0% {
+          background: #E0E0E0;
+        }
+        50% {
+          -webkit-border-radius: 4px;
+        }
+        100% {
+          width: 440px;
+          height: 280px;
+          background: #FFFFFF;
+          -webkit-border-radius: 4px;
+        }
+      }
+      
+      @keyframes materia {
+        0% {
+          background: #E0E0E0;
+        }
+        50% {
+          border-radius: 4px;
+        }
+        100% {
+          width: 440px;
+          height: 280px;
+          background: #FFFFFF;
+          border-radius: 4px;
+        }
+      }
+      
+      @-webkit-keyframes moveIn {
+        0% {
+          margin-top: 50px;
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+          margin-top: -20px;
+        }
+      }
+      
+      @keyframes moveIn {
+        0% {
+          margin-top: 50px;
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+          margin-top: -20px;
+        }
+      }
+      
+      @-webkit-keyframes scaleIn {
+        0% {
+          -webkit-transform: scale(0);
+        }
+        100% {
+          -webkit-transform: scale(1);
+        }
+      }
+      
+      @keyframes scaleIn {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      
+      @-webkit-keyframes ripple {
+        0% {
+          transform: scale3d(0, 0, 0);
+        }
+        50%,
+        100% {
+          -webkit-transform: scale3d(1, 1, 1);
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      
+      @keyframes ripple {
+        0% {
+          transform: scale3d(0, 0, 0);
+        }
+        50%,
+        100% {
+          transform: scale3d(1, 1, 1);
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      
+      @media screen and (min-aspect-ratio: 4/3) {
+        body {
+          background-size: cover;
+        }
+        body:before {
+          width: 0px;
+        }
+        @ -webkit-keyframes puff {
+          0% {
+            top: 100%;
+            width: 0px;
+            padding-bottom: 0px;
+          }
+          100% {
+            top: 50%;
+            width: 100%;
+            padding-bottom: 100%;
+          }
+        }
+        @keyframes puff {
+          0% {
+            top: 100%;
+            width: 0px;
+            padding-bottom: 0px;
+          }
+          100% {
+            top: 50%;
+            width: 100%;
+            padding-bottom: 100%;
+          }
+        }
+      }
+      
+      @media screen and (min-height: 480px) {
+        .profile-card header {
+          width: auto;
+          height: auto;
+          padding: 30px 20px;
+          display: block;
+          float: none;
+          border-right: none;
+        }
+        .profile-card .profile-bio {
+          width: auto;
+          height: auto;
+          padding: 15px 20px 30px 20px;
+          display: block;
+          float: none;
+        }
+        .profile-social-links {
+          width: 100%;
+          display: block;
+          float: none;
+        }
+        @ -webkit-keyframes materia {
+          0% {
+            background: #E0E0E0;
+          }
+          50% {
+            -webkit-border-radius: 4px;
+          }
+          100% {
+            width: 280px;
+            height: 440px;
+            background: #FFFFFF;
+            -webkit-border-radius: 4px;
+          }
+        }
+        @keyframes materia {
+          0% {
+            background: #E0E0E0;
+          }
+          50% {
+            border-radius: 4px;
+          }
+          100% {
+            width: 280px;
+            height: 440px;
+            background: #FFFFFF;
+            border-radius: 4px;
+          }
+        }
+      }
+    </style>
+
+ <!-- Life in Space -->
+ <!-- 78waves and apsolut -->
+ <canvas></canvas>
+ <style>
+    /* Its online experiment - apsolut */
+
+canvas {
+    display: block;
+     opacity:0.4;
+     filter:alpha(opacity=40);
+  }
+  
+  body {
+  /*  ==background:#000 url('https://apod.nasa.gov/apod/image/1806/Milkyway_Musca_SPSackenheim1024Lab.jpg');*/
+    background-color: #4c2e63;
+    background-image: url('./texture.png');
+    /*https://www.transparenttextures.com/3px-tile.html */
+    background-size: cover;
+}
+</style>
+<script>
+    "use strict";
+
+window.requestAnimFrame = (function() {
+    return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+        function( callback ) { window.setTimeout(callback, 1000 / 60 ); }
+})();
+
+(function() {
+  var settings = {
+    NUM_PARTICLES : 20,
+    DISTANCE_T    : 0,
+    RADIUS        : 1.5,
+    OPACITY       : 1,
+    SPEED_X       : 0.8,
+    SPEED_Y       : 0.6,
+    AMPLITUDE     : 110
+  };
+  
+  var COLOURS    = ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
+      bounds     = {},
+      particles  = [],
+      random     = Math.random,
+      sqrt       = Math.sqrt,
+      PI         = Math.PI,
+      ctx, W, H, stats;
+  
+  function Particle() {
+    this.x      = random() * bounds.right;
+    this.y      = random() * bounds.bottom;
+    this.xspeed = random() * settings.SPEED_X;
+    this.yspeed = random() * settings.SPEED_Y;
+    this.radius = settings.RADIUS;
+    this.colour = COLOURS[ ~~(random() * COLOURS.length)];
+  }
+  
+  var bindEvents = function() {
+    window.addEventListener('resize', resize, false);
+  };
+  
+  var resize = function() {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    ctx.canvas.width  = W;
+    ctx.canvas.height = H;
+    bounds.top      = 1;
+    bounds.right    = W;
+    bounds.bottom   = H;
+    bounds.left     = 1;
+  };
+  
+  var draw = function() {
+    render();
+    requestAnimFrame(draw);
+  };
+  
+  var update = function (p) {
+    p.x += p.xspeed;
+    p.y += p.yspeed;
+    
+    if (p.x > bounds.right) {
+      p.x = bounds.right;
+      p.xspeed *= -1;
+    }
+    if (p.x < bounds.left) {
+      p.x = bounds.left;
+      p.xspeed *= -1;
+    }
+    if (p.y > bounds.bottom) {
+      p.y = bounds.bottom;
+      p.yspeed *= -1;
+    }
+    if (p.y < bounds.top) {
+      p.y = bounds.top;
+      p.yspeed *= -1;
+    }
+  };
+  
+  var render = function() {
+    ctx.beginPath();
+    ctx.globalCompositeOperation = "source-over";
+    ctx.rect(0, 0 , W, H);
+    ctx.fillStyle = "rgba(0,0,0,.3)";
+
+    ctx.fill();
+    ctx.closePath();
+    
+    ctx.globalCompositeOperation = "lighter";
+        
+    for (var i = 0; i < particles.length; i += 1) {
+      var p = particles[i];
+      
+      ctx.beginPath();
+      ctx.globalAlpha = settings.OPACITY;
+      ctx.fillStyle = p.colour;
+      ctx.arc(p.x, p.y, p.radius, PI * 2, false);
+      ctx.fill();
+      ctx.closePath();
+      
+      for (var j = 0; j < particles.length; j += 1) {
+        var pp = particles[j],
+            yd = pp.y - p.y,
+            xd = pp.x - p.x,
+            d  = sqrt(xd * xd + yd * yd);
+        
+        if ( d < settings.DISTANCE_T ) {
+          ctx.beginPath();
+          ctx.globalAlpha = (settings.DISTANCE_T - d) / (settings.DISTANCE_T - 0);
+          ctx.lineWidth = 1;
+          ctx.moveTo(p.x, p.y);
+          
+          if ( settings.AMPLITUDE ) {
+            ctx.bezierCurveTo(
+              p.x,
+              p.y - random() * settings.AMPLITUDE,
+              pp.x,
+              pp.y + random() * settings.AMPLITUDE,
+              pp.x,
+              pp.y
+            );
+          } else {
+            ctx.lineTo(pp.x, pp.y);
+          }
+          
+          ctx.strokeStyle = p.colour;
+          ctx.lineCap = "round";
+          ctx.stroke();
+          ctx.closePath();
+          
+        }
+      }
+      
+      update(p);
+      
+    }
+  };
+  
+  var updateSpeed = function( x, y, attr ) {
+    var speed = arguments[0] ? x : y;
+    for (var i = 0; i < settings.NUM_PARTICLES; i += 1) {
+      var ns = random() * speed;
+      particles[i][attr] = particles[i][attr] > 0 ? ns : -ns;
+    }
+  };
+  
+  var updateRadius = function( value ) {
+    for (var i = 0; i < settings.NUM_PARTICLES; i += 1) {
+      particles[i].radius = value;
+    }
+  };
+  
+  var init = function() {
+    ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+  
+    bindEvents();
+    resize();
+    
+    for (var i = 0; i < settings.NUM_PARTICLES; i += 1) {
+      particles.push( new Particle() );
+    }
+    
+    draw();
+  };
+  
+  window.onload = init;
+  
+  var GUI = new dat.GUI();
+  
+  GUI.add(settings, 'NUM_PARTICLES')
+    .min(100)
+    .max(200)
+    .step(1)
+    .name("# Particles")
+    .onFinishChange(function( num ){
+      var l = particles.length;
+      if ( num < l ) {
+        var diff = (l - num);
+        particles.splice( 1, diff );
+      }
+    
+      if ( num > l ) {
+        var diff = (num - l);
+        for (var i = 0; i < diff; i += 1) {
+          particles.push( new Particle() );
+        }
+      }
+    });
+  
+  GUI.add(settings, 'DISTANCE_T').min(0)
+    .max(200)
+    .step(10)
+    .name("Distance");
+  
+  GUI.add(settings, 'RADIUS')
+    .min(0)
+    .max(10)
+    .step(1)
+    .name("Radius")
+    .onFinishChange(function( value ) {
+      updateRadius( value );
+    });
+  
+  GUI.add(settings, 'SPEED_X')
+    .min(0)
+    .max(20)
+    .name("X speed")
+    .onFinishChange(function( value ) {
+      updateSpeed( value, false, "xspeed");
+    });
+  
+  GUI.add(settings, 'SPEED_Y')
+    .min(0)
+    .max(20)
+    .name("Y speed")
+    .onFinishChange(function( value ) {
+      updateSpeed( false, value, "yspeed");
+    });
+  
+  GUI.add(settings, 'AMPLITUDE')
+    .min(0)
+    .max(20)
+    .step(1)
+    .name("Amplitude");
+  
+  GUI.close();
+  
+})();	
+  		
+  		
+  		var canvas = document.getElementById("canvas"),
+    ctx = canvas.getContext("2d");
+
+
+
+var background = new Image();
+background.src = "";
+
+background.onload = function(){
+    ctx.drawImage(background,0,0);   
+}
+
+
+</script>
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+p > a:hover{
+    color: #d9d9d9;
+    text-decoration:  underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin:  1% 0 1% 0;
+}
+._12 {
+    font-size: 1.2em;
+}
+._14 {
+    font-size: 1.4em;
+}
+ul {
+    padding:0;
+    list-style: none;
+}
+.footer-social-icons {
+    width: 350px;
+    display:block;
+    margin: 0 auto;
+}
+.social-icon {
+    color: #fff;
+}
+ul.social-icons {
+    margin-top: 10px;
+}
+.social-icons li {
+    vertical-align: top;
+    display: inline;
+    height: 100px;
+}
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+.fa-facebook {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-facebook:hover {
+    background-color: #3d5b99;
+}
+.fa-twitter {
+    padding:10px 12px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #773f32;
+}
+.fa-twitter:hover {
+    background-color: #00aced;
+
+</style>
+
+<style>
+  a:link {
+      color: rgb(255, 193, 58);
+      background-color: transparent;
+      text-decoration: none;
+  }
+
+  a:visited {
+      color: rgb(80, 59, 0);
+      background-color: transparent;
+      text-decoration: none;
+  }
+
+  a:hover {
+      color: rgb(118, 255, 248);
+      background-color: transparent;
+      text-decoration: underline;
+  }
+
+  a:active {
+      color: rgb(255, 109, 109);
+      background-color: transparent;
+      text-decoration: underline;
+  }
+</style>
