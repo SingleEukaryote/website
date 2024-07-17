@@ -1,95 +1,146 @@
 <!DOCTYPE html>
-<!-- Hello there! Welcome to my terrible conglomerate of coding. 
-    Enjoy your stay and please take whatever you want. This is the internet afterall. 
-    Alright, bye now! Also can I just say you are looking fantastic today? 
-    If you need anything from me, shoot me an email. I don't mind. 
-                                                                            -Tristan -->
-<style>
-    a:link {
-        color: rgb(255, 193, 58);
-        background-color: transparent;
-        text-decoration: none;
-    }
-
-    a:visited {
-        color: rgb(80, 59, 0);
-        background-color: transparent;
-        text-decoration: none;
-    }
-
-    a:hover {
-        color: rgb(118, 255, 248);
-        background-color: transparent;
-        text-decoration: underline;
-    }
-
-    a:active {
-        color: rgb(255, 109, 109);
-        background-color: transparent;
-        text-decoration: underline;
-    }
-</style>
-
+<html lang="en">
 <head>
-  <!-- typer -->
-<body>
-  <audio src="https://imsolitude.github.io/typewriter/keystroke.mp3" type="audio/mp3" id="myAudio"></audio>
-  <div class="holder">
-    <div class="text" id="text"></div><span class="text">|</span>
-  </div>
-</body>
-
-<script>
-    let sound = document.getElementById("myAudio");
-sound.volume = 0.3;
-
-let div = document.getElementById("text");
-
-const letters = ["C", "i", "r", "c", "l", "e"];
-
-setTimeout(
-() =>
-  letters.forEach((letter, i) => {
-    setTimeout(() => {
-      div.innerHTML += letter;
-      sound.play();
-    }, i * 500);
-  }),
-2800
-);
-</script>
-<!-- typer -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Circle</title>
     <link rel="icon" href="/favicons/vfavicon.png">
     <link rel="shortcut" href="/favicons/vfavicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+    <link rel="stylesheet" href="../fonts/vulf-mono.css">
+    <link rel="stylesheet" href="../fonts/vulf-sans.css">
+    <link rel="stylesheet" href="./vaultfonts.css">
+    <link rel="stylesheet" href="../pmedia.css">
+    <link rel="stylesheet" href="./vault.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .holder {
+            display: none; /* Hidden by default */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .marquee-container {
+            visibility: hidden; /* Initially hidden */
+        }
+
+        a:link, a:visited {
+            color: rgb(255, 193, 58);
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover, a:active {
+            color: rgb(118, 255, 248);
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        #startButton {
+            border: none;
+            color: rgba(173, 173, 173, 0.191);
+            background-color: #fcbb2444; /* Shiny orange color */
+            padding: 15px 5px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(255, 24, 24, 0.4); /* Shiny effect */
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #startButton:hover {
+            background-color: #f8a42e;
+            color: rgb(119, 75, 10);
+            box-shadow: 0 60px 60px rgb(241, 66, 66); /* More shine on hover */
+        }
+
+        #startButton:active {
+            box-shadow: 1 100px 100px rgb(249, 11, 201); /* Less shine on click */
+            padding: 1000px 1000px;
+            transform: translateY(2px); /* Slight movement on click */
+        }
+    </style>
 </head>
+<body>
+    <audio src="./circle/boop.mp3" type="audio/mp3" id="myAudio"></audio>
+    <div class="button-container">
+        <button id="startButton">Start</button>
+    </div>
+    <div class="holder">
+        <div class="text" id="text"></div><span class="text" id="cursor">|</span>
+    </div>
+    <div class="marquee-container">
+        <h2 align="center">
+            <marquee behavior="alternate" scrollamount="5">
+                <a href="../vault/circle/travelfrom.html" style="text-decoration:none;">
+                    <font size="5" color="white">← back</font>
+                </a>
+            </marquee>
+        </h2>
+        <h6 align="center">
+            <marquee behavior="alternate" direction="right" scrollamount="15"><a href="circle/avdang"><font color="E7E561">Aria Dang</font></a></marquee>
+            <br>
+            <marquee behavior="alternate" direction="left" scrollamount="50"><a href="circle/strangewaves"><font color="E63DC2">strangewaves</font></a></marquee>
+            <marquee behavior="alternate" direction="right" scrollamount="9"><a href="circle/tolu"><font color="9B9683">tolu</font></a></marquee>
+            <marquee behavior="alternate" direction="Right" scrollamount="4"><a href="circle/zoé.html"><font color="#ffc5b0">Zoé Ishee</a></marquee>
+            <marquee behavior="alternate" direction="left" scrollamount="19"><a href="circle/mystery-man.html"><font color="#f0f0f0">mystery-man</a></marquee>
+            <marquee behavior="alternate" direction="left" scrollamount="29"><a href="circle/sample">sample</a></marquee>
+        </h6>
+    </div>
 
-<body bgcolor=black>
+    <script>
+        let sound = document.getElementById("myAudio");
+        sound.volume = 0.3;
+
+        let div = document.getElementById("text");
+        let cursor = document.getElementById("cursor");
+        let button = document.getElementById("startButton");
+        let holder = document.querySelector('.holder');
+        let buttonContainer = document.querySelector('.button-container');
+        let marqueeContainer = document.querySelector('.marquee-container');
+
+        const letters = ["C", "i", "r", "c", "l", "e"];
+
+        button.addEventListener("click", () => {
+            buttonContainer.classList.add('hidden');
+            setTimeout(() => {
+                holder.style.display = 'block';
+                letters.forEach((letter, i) => {
+                    setTimeout(() => {
+                        div.innerHTML += letter;
+                        sound.play();
+                        // Move the cursor with the letters
+                        cursor.style.display = 'inline';
+                        div.appendChild(cursor);
+                    }, i * 500);
+                });
+
+                // Hide the cursor after the typing is done
+                setTimeout(() => {
+                    cursor.style.display = 'none';
+                }, letters.length * 500);
+
+                // Show the marquee links 3 seconds after the letters appear
+                setTimeout(() => {
+                    marqueeContainer.style.visibility = 'visible';
+                }, letters.length * 500 + 3000);
+            }, 2800);
+        });
+    </script>
 </body>
-<html lang="en">
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../fonts/vulf-mono.css">
-<link rel="stylesheet" href="../fonts/vulf-sans.css">
-<link rel="stylesheet" href="./vaultfonts.css">
-<link rel="stylesheet" href="../pmedia.css">
-<link rel="stylesheet" href="./vault.css">
-
-
-
-
-<h2 align=center>
-<marquee behavior="alternate" scrollamount="5"><A HREF="../vault/circle/travelfrom.html" style="text-decoration:none;">
-    <font size=5>
-        <font color=white>← back</font>
-</A></marquee>
-</h2>
-<h6 align=center>
-<marquee behavior="alternate" direction="right" scrollamount="20"><A HREF="circle/avdang"><font color=E7E561>Aria Dang</font></A></marquee>
-</br>
-<marquee behavior="alternate" direction="left" scrollamount="20"><A HREF="circle/strangewaves"><font color=E63DC2>strangewaves</font></A></marquee>
-<marquee behavior="alternate" direction="right" scrollamount="16"><A HREF="circle/tolu"><font color=9B9683>tolu</font></A></marquee>
-<marquee behavior="alternate" direction="left" scrollamount="20"><A HREF="circle/sample">sample</A></marquee>
-</h6>
-
+</html>
